@@ -28,5 +28,5 @@ jobs:
       uses: actions/upload-artifact@v3.1.3
       with:
         name: Out
-        path: ${{github.workspace}}/main.exe
+        path: ${{github.workspace}}/golang-test
               
