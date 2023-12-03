@@ -1,7 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 func main() {
-	fmt.Println("Here again..")
+	secret := os.Getenv("TEST_SECRET")
+	fmt.Println("The secret is:", secret)
 }
