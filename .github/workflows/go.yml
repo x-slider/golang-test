@@ -30,15 +30,20 @@ jobs:
 
     - name: Build
       run: |
-        GOOS=${{ matrix.os }} GOARCH=${{ matrix.arch }} go build -v -o myapp-${{ matrix.os }}-${{ matrix.arch }} ./main.go
+        if [ "${{ matrix.os }}" = "windows" ]; then
+          EXT=".exe"
+        else
+          EXT=""
+        fi
+        GOOS=${{ matrix.os }} GOARCH=${{ matrix.arch }} go build -v -o myapp-${{ matrix.os }}-${{ matrix.arch }}$EXT ./main.go
       env:
         CGO_ENABLED: 0
-
+  
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.1.3
       with:
         name: myapp-${{ matrix.os }}-${{ matrix.arch }}
-        path: myapp-${{ matrix.os }}-${{ matrix.arch }}
+        path: myapp-${{ matrix.os }}-${{ matrix.arch }}${{ matrix.os == 'windows' && '.exe' || '' }}
 
     - name: Run
       if: matrix.os == 'linux' && matrix.arch == 'amd64'
