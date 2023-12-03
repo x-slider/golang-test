@@ -116,7 +116,7 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./artifacts/myapp-windows-386/myapp-windows-386.exe
-          asset_name: myapp-windows-386
+          asset_name: myapp-windows-386.exe
           asset_content_type: application/octet-stream
   
       - name: Upload Release Asset for Windows amd64
@@ -126,5 +126,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./artifacts/myapp-windows-amd64/myapp-windows-amd64.exe
-          asset_name: myapp-windows-amd64
+          asset_name: myapp-windows-amd64.exe
           asset_content_type: application/octet-stream
