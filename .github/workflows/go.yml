@@ -93,36 +93,6 @@ jobs:
           asset_path: ./artifacts/myapp-linux-amd64/myapp-linux-amd64
           asset_name: myapp-linux-amd64
           asset_content_type: application/octet-stream
-
-      - name: Upload Release Asset for Linux arm64
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./artifacts/myapp-linux-arm64/myapp-linux-arm64
-          asset_name: myapp-linux-arm64
-          asset_content_type: application/octet-stream
-
-      - name: Upload Release Asset for Linux 386
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./artifacts/myapp-linux-386/myapp-linux-386
-          asset_name: myapp-linux-386
-          asset_content_type: application/octet-stream
-  
-      - name: Upload Release Asset for Linux amd64
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./artifacts/myapp-linux-amd64/myapp-linux-amd64
-          asset_name: myapp-linux-amd64
-          asset_content_type: application/octet-stream
   
       - name: Upload Release Asset for Linux arm64
         uses: actions/upload-release-asset@v1
