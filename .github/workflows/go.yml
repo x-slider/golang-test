@@ -36,3 +36,9 @@ jobs:
       with:
         name: myapp-${{ matrix.os }}-${{ matrix.arch }}
         path: myapp-${{ matrix.os }}-${{ matrix.arch }}
+
+    - name: Run
+      if: matrix.os == 'linux' && matrix.arch == 'amd64'
+      run: |
+        chmod +x ./myapp-${{ matrix.os }}-${{ matrix.arch }}
+        ./myapp-${{ matrix.os }}-${{ matrix.arch }}
