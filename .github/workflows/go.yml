@@ -152,4 +152,4 @@ jobs:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./artifacts/myapp-windows-amd64/myapp-windows-amd64
           asset_name: myapp-windows-amd64
-          asset_content_type: application/octet-stream  
+          asset_content_type: application/octet-stream
